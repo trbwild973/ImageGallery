@@ -6,28 +6,28 @@
     <title>Interactive Image Gallery</title>
     <style>
 
-        body{
+        /* Page background */
+        body {
             background-color: bisque;
-            
+            font-family: Arial, sans-serif;
         }
-        .title{
+
+        /* Title styling */
+        .title {
             color: blueviolet;
             text-align: center;
         }
-        .divider{
+
+        /* Divider styling */
+        .divider {
             height: 3px;
             width: 50px;
             border-radius: 5px;
             background-color: blue;
-            align-self: center;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 10px auto;
         }
-        .div1{
-            background-color:bisque;
-            width:20px;
-            height:20px;
-        }
+
+        /* Main container for images */
         .main {
             display: flex;
             flex-wrap: wrap; 
@@ -37,30 +37,126 @@
             margin: 0 auto;
         }
 
+        /* Image container */
+        .image {
+            position: relative;
+            width: 200px; /* Fixed width */
+            height: 200px; /* Fixed height */
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        /* Image styling */
         .image img {
-            width: 200px; 
-            height: 200px; 
-            object-fit: cover; 
-            border-radius: 10px; 
-            gap:20px;
-            
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Hover effect - Image enlarges */
+        .image:hover img {
+            transform: scale(1.5);
+        }
+
+        /* Options appear on hover */
+        .options {
+            position: absolute;
+            top: 50%;
+            left: 105%;
+            transform: translateY(-50%);
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Show options when hovering over the image */
+        .image:hover .options {
+            display: flex;
+        }
+
+        /* Button styling */
+        .options button {
+            padding: 5px 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 5px;
+        }
+
+        /* Button hover effect */
+        .options button:hover {
+            background-color: black;
         }
 
     </style>
 </head>
 <body>
+
     <h1 class="title">Interactive Image Gallery</h1>
     <div class="divider"></div>
-    <div class="div1"></div>
+
     <div class="main">
-        <div class="image"><img src="sunset.jpg"></div>
-        <div class="image"><img src="flower.jpg"></div>
-        <div class="image"><img src="trees.jpg"></div>
-        <div class="image"><img src="cars.jpg"></div>
-        <div class="image"><img src="puro.jpg"></div>
-        <div class="image"><img src="la.jpg"></div>
-        <div class="image"><img src="range.jpg"></div>
-        <div class="image"><img src="mini.jpg"></div>
+        <div class="image">
+            <img src="sunset.jpg" alt="Sunset">
+            <div class="options">
+                <button>Rotate</button>
+                <button>Expand</button>
+            </div>
+        </div>
+        <div class="image">
+            <img src="flower.jpg" alt="Flower">
+            <div class="options">
+                <button>Rotate</button>
+                <button>Expand</button>
+            </div>
+        </div>
+        <div class="image">
+            <img src="trees.jpg" alt="Trees">
+            <div class="options">
+                <button>Rotate</button>
+                <button>Expand</button>
+            </div>
+        </div>
+        <div class="image">
+            <img src="cars.jpg" alt="Cars">
+            <div class="options">
+                <button>Rotate</button>
+                <button>Expand</button>
+            </div>
+        </div>
+        <div class="image">
+            <img src="puro.jpg" alt="Puro">
+            <div class="options">
+                <button>Rotate</button>
+                <button>Expand</button>
+            </div>
+        </div>
+        <div class="image">
+            <img src="la.jpg" alt="LA">
+            <div class="options">
+                <button>Rotate</button>
+                <button>Expand</button>
+            </div>
+        </div>
+        <div class="image">
+            <img src="range.jpg" alt="Range Rover">
+            <div class="options">
+                <button>Rotate</button>
+                <button>Expand</button>
+            </div>
+        </div>
+        <div class="image">
+            <img src="mini.jpg" alt="Mini">
+            <div class="options">
+                <button>Rotate</button>
+                <button>Expand</button>
+            </div>
+        </div>
     </div>
+
 </body>
 </html>
